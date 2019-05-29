@@ -115,7 +115,9 @@ class FingerprintAuthDialogFragment : DialogFragment(), FingerprintDialogView {
     }
 
     private val resetErrorTextRunnable = Runnable {
-        view!!.imageView.setImageResource(R.drawable.ic_fingerprint)
+        view!!.imageView.run {
+            setImageResource(R.drawable.ic_fingerprint)
+        }
         view!!.fingerprintStatus.run {
             setTextColor(resources.getColor(R.color.gray_73_percent, null))
             text = getString(R.string.touch_fingerprint_sensor)

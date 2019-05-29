@@ -73,10 +73,12 @@ class FingerprintOnboardingFragment : Fragment(), FingerprintOnboardingView {
     }
 
     private val resetErrorTextRunnable = Runnable {
-        view!!.iconFingerprint.setImageResource(R.drawable.ic_fingerprint)
+        view!!.iconFingerprint.run {
+            setImageResource(R.drawable.ic_fingerprint)
+        }
         view!!.sensorDescription.run {
-            setTextColor(resources.getColor(R.color.gray_73_percent, null))
-            text = getString(R.string.touch_fingerprint_sensor)
+                setTextColor(resources.getColor(R.color.gray_73_percent, null))
+                text = getString(R.string.touch_fingerprint_sensor)
         }
     }
 }
